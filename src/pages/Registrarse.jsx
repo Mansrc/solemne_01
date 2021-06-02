@@ -4,7 +4,7 @@ import imagen from "../components/4.jpeg"
 import Card from"../components/Card"
 import FormImput from "../components/FormInput"
 import Separacion from "../components/Separacion"
-import FormInputInline from "../components/FormInputInline"
+
 
 function Registrarse(){
     return(
@@ -23,10 +23,28 @@ function Registrarse(){
                  label="Correo Electronico"
                  type="email"
                  />
-                <FormInputInline className="inputsinline"
-                label="numero telefono"
-                type="text"
-                />
+                 <FormImput
+                 label="numero telefono"
+                 type="email"
+                 />
+                 <FormImput
+                 label="direccion"
+                 type="email"
+                 />
+                 <FormImput
+                 label="contraseña"
+                 type="password"
+                 />
+                 <FormImput
+                 label="confirmar contraseña"
+                 type="password"
+                 />
+                 <FormImput
+                 label="codigo del trabajador"
+                 type="password"
+                 />
+
+                
                 <div>
                     
                     <input type="submit" value ="registrarse" className="boton_ingresar_enviar color_boton_input"/>

@@ -12,8 +12,9 @@ import Acercade_Servicios from "./pages/Acercade_Servicios"
 import IngresoTrabajadores from "./pages/IngresoTrabajadores"
 import CancelarHora from "./pages/CancelarHora"
 import Registrarse from "./pages/Registrarse"
-
-
+import Acerca_Nosotros from "./pages/Acerca_nosotros"
+import ReservarHora1 from "./pages/ReservarHora"
+import ReservarHora2 from "./pages/ReservarHora2"
 
 function App() {
   return (
@@ -43,6 +44,22 @@ function App() {
         <Route exact path="/acerca_de/registrarse">
             <Registrarse />
         </Route>
+        <Route exact path="/acerca_de/nosotros">
+            <Acerca_Nosotros />
+        </Route>
+        <Route exact path="/servicios/scannerGold">
+            <ReservarHora1/>
+        </Route>
+        <Route exact path="/servicios/scannerplatinium">
+            <ReservarHora1/>
+        </Route>
+        <Route exact path="/servicios/scannerSilver">
+            <ReservarHora1/>
+        </Route>
+        <Route exact path="/servicios/scannerGold/vehiculo">
+            <ReservarHora2/>
+        </Route>
+        
       </Switch>
       
     </Router>

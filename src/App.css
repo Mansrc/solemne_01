@@ -223,16 +223,26 @@ nav ul ul ul li{
   width: 90%;
   border-radius: 10px;
 }
-/*-------------imput en linea---------------*/
-.inputsinline{
-  display: inline;
-  width: 40%;
-  height: 35px;
-  font-size: 100%;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  border-radius: 10px;
+/*-------------reservar hora y nosotros---------------*/
+h3{
+  margin: 0;
+  opacity: 70%;
 }
-.abajo{
-  display:table-row;
+h2{
+    padding-left:15px;
 }
+h4{
+    margin: 0;
+    opacity: 70%;
+}
+h6{
+    margin-top: 0px;
+    
+}
+#pasage{
+  display:inline-block;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 100px;
+}
+
