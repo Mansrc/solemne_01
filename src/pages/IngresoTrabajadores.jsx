@@ -3,8 +3,7 @@ import Navbar from "../components/Navbar";
 import Separacion from "../components/Separacion"
 import imagen from "../components/4.jpeg"
 import Card from "../components/Card";
-import FormImput from "../components/FormInput"
-import FormTextarea from "../components/FormTextarea"
+import FormInput from "../components/FormInput"
 import {Link} from "react-router-dom"
 
 
@@ -18,18 +17,20 @@ function IngresoTrabajadores(){
             
             <img src={imagen} id="imagen_contacto" />
             <Card title="Ingreso de Trabajadores" id="carta_redondear">
-                <FormImput
+                <form>
+                <FormInput
                 label="Correo"
                 type="email"
                  />
-                 <FormImput
+                 <FormInput
                  label="contraseña"
                  type="password"
                  />
                 <div>
                     
-                    <input type="submit" value ="Entrar" className="boton_ingresar_enviar color_boton_input"/>
+                    <button type="submit" className="boton_ingresar_enviar color_boton_input">Entrar</button>
                 </div>
+                </form>
                 <div>
                     
                     <Link to="/acerca_de/registrarse"><button  className="boton_ingresar_enviar ">Registrarse</button></Link>

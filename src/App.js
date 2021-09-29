@@ -16,6 +16,7 @@ import Acerca_Nosotros from "./pages/Acerca_nosotros"
 import ReservarHora1 from "./pages/ReservarHora"
 import ReservarHora2 from "./pages/ReservarHora2"
 import Calendario from './components/Calendario';
+import ReservarHora4 from "./pages/ReservarHora4"
 
 function App() {
   return (
@@ -64,6 +65,9 @@ function App() {
             <Calendario/>
             </Route>
         
+        <Route exact path="/servicios/scannerGold/vehiculo/horas/trabajador">
+            <ReservarHora4/>
+        </Route>
       </Switch>
       
     </Router>

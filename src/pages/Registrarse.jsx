@@ -57,8 +57,7 @@ function Registrarse(){
                 
                 <div>
                     
-                    <button type="submit" className="boton_ingresar_enviar color_boton_input" onClick={()=>abrirCerrarModal()}
-                    variant="contained">Registrarse</button>
+                    <button type="submit" className="boton_ingresar_enviar color_boton_input" onClick={()=>abrirCerrarModal()}>Registrarse</button>
                     <Modal
                     open={modal}
                     onClose={abrirCerrarModal}

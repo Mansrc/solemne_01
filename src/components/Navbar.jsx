@@ -7,7 +7,7 @@ import logo from "./logoNavbar.jpg"
 function Navbar(){
 
     return(
-        <nav>
+        <nav className="navbar">
         <div class ="logo"><img class ="logo" src={logo}/></div>
     
     <ul>
