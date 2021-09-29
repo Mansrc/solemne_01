@@ -4,14 +4,14 @@ import imagen from "../components/4.jpeg"
 import Card from"../components/Card"
 import FormImput from "../components/FormInput"
 import Separacion from "../components/Separacion"
-import {Button, Modal} from "@material-ui/core"
+import {Modal} from "@material-ui/core"
 
 
 function Registrarse(){
     const [modal, setModal] = useState(false)
     const body = (
-        <Card title="Felicidades, haz sido registrado">
-        <Button variant="contained" onClick={()=>abrirCerrarModal()}>OK</Button>
+        <Card title="Felicidades, has sido registrado">
+        <button className="boton_ingresar_enviar color_boton_input" onClick={()=>abrirCerrarModal()}>OK</button>
         </Card>
     )
     const abrirCerrarModal= () => {
@@ -57,8 +57,8 @@ function Registrarse(){
                 
                 <div>
                     
-                    <Button type="submit" className="boton_ingresar_enviar" color = "yellow" onClick={()=>abrirCerrarModal()}
-                    variant="contained">Registrarse</Button>
+                    <button type="submit" className="boton_ingresar_enviar color_boton_input" onClick={()=>abrirCerrarModal()}
+                    variant="contained">Registrarse</button>
                     <Modal
                     open={modal}
                     onClose={abrirCerrarModal}
