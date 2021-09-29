@@ -21,11 +21,6 @@ const opciones=[
 
 ]
 const opciones2=[
-    {value:"1995", label:"1995"},
-    {value:"1996" ,label:"1996"},
-    {value:"1997", label:"1997"},
-    {value:"1998", label:"1998"},
-    {value:"1999" ,label:"1999"},
     {value:"2000", label:"2000"},
     {value:"2001", label:"2001"},
     {value:"2002" ,label:"2002"},

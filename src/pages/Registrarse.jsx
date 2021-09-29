@@ -1,12 +1,22 @@
-import React from "react"
+import React,{useState} from "react"
 import Navbar from "../components/Navbar"
 import imagen from "../components/4.jpeg"
 import Card from"../components/Card"
 import FormImput from "../components/FormInput"
 import Separacion from "../components/Separacion"
+import {Button, Modal} from "@material-ui/core"
 
 
 function Registrarse(){
+    const [modal, setModal] = useState(false)
+    const body = (
+        <Card title="Felicidades, haz sido registrado">
+        <Button variant="contained" onClick={()=>abrirCerrarModal()}>OK</Button>
+        </Card>
+    )
+    const abrirCerrarModal= () => {
+        setModal(!modal)
+    }
     return(
         <>
         <Navbar/>
@@ -24,30 +34,35 @@ function Registrarse(){
                  type="email"
                  />
                  <FormImput
-                 label="numero telefono"
+                 label="Numero telefono"
                  type="email"
                  />
                  <FormImput
-                 label="direccion"
+                 label="Direccion"
                  type="email"
                  />
                  <FormImput
-                 label="contraseña"
+                 label="Contraseña"
                  type="password"
                  />
                  <FormImput
-                 label="confirmar contraseña"
+                 label="Confirmar contraseña"
                  type="password"
                  />
                  <FormImput
-                 label="codigo del trabajador"
+                 label="Codigo del trabajador"
                  type="password"
                  />
 
                 
                 <div>
                     
-                    <input type="submit" value ="registrarse" className="boton_ingresar_enviar color_boton_input"/>
+                    <Button type="submit" className="boton_ingresar_enviar" color = "yellow" onClick={()=>abrirCerrarModal()}
+                    variant="contained">Registrarse</Button>
+                    <Modal
+                    open={modal}
+                    onClose={abrirCerrarModal}
+                    >{body}</Modal>
                 </div>
 
             </Card>
