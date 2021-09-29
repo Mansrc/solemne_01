@@ -30,15 +30,15 @@ function Registrarse(){
                 type="text"
                  />
                  <FormImput
-                 label="Correo Electronico"
+                 label="Correo Electrónico"
                  type="email"
                  />
                  <FormImput
-                 label="Numero telefono"
+                 label="Número Teléfono"
                  type="email"
                  />
                  <FormImput
-                 label="Direccion"
+                 label="Dirección"
                  type="email"
                  />
                  <FormImput
@@ -50,7 +50,7 @@ function Registrarse(){
                  type="password"
                  />
                  <FormImput
-                 label="Codigo del trabajador"
+                 label="Código del trabajador"
                  type="password"
                  />
 
