@@ -13,6 +13,43 @@ const opciones=[
     {value:"3" ,label:"Vitacura"}
 ]
     
+const opcionesVehiculo=[
+    {value:"1", label:"Chevrolet"},
+    {value:"2", label:"Ford"},
+    {value:"3" ,label:"Hyundai"},
+    {value:"4" ,label:"Kia"},
+    {value:"5" ,label:"MG"},
+    {value:"6" ,label:"Mazda"},
+    {value:"7" ,label:"Nissan"},
+    {value:"8" ,label:"Peugeot"},
+    {value:"9" ,label:"Suzuki"},
+    {value:"10" ,label:"Toyota"},
+
+]
+const opciones2=[
+    {value:"2000", label:"2000"},
+    {value:"2001", label:"2001"},
+    {value:"2002" ,label:"2002"},
+    {value:"2003", label:"2003"},
+    {value:"2004", label:"2004"},
+    {value:"2005" ,label:"2005"},
+    {value:"2006", label:"2006"},
+    {value:"2007", label:"2007"},
+    {value:"2008" ,label:"2008"},
+    {value:"2009", label:"2009"},
+    {value:"2010", label:"2010"},
+    {value:"2011" ,label:"2011"},
+    {value:"2012", label:"2012"},
+    {value:"2013", label:"2013"},
+    {value:"2014" ,label:"2014"},
+    {value:"2015", label:"2015"},
+    {value:"2016", label:"2016"},
+    {value:"2017" ,label:"2017"},
+    {value:"2018", label:"2018"},
+    {value:"2019", label:"2019"},
+    {value:"2020" ,label:"2020"},
+    {value:"2021", label:"2021"}
+]
 function ReservarHora(){
     return(
         <>
@@ -35,9 +72,16 @@ function ReservarHora(){
                  placeholder="Direccion"
                  type="text"
                  />
-                 <FormTextarea placeholder="Comentarios" type="text"/>
+                 <h1 className="titulo">datos del vehiculo</h1>
+                 <FormSelect options={opcionesVehiculo} label="Marca del Vehiculo"/>
+                  <FormSelect options={opciones2} label="Año"/>
+                 <FormImput
+                 placeholder="Modelo del Vehiculo"
+                 type="text"
+                 />
+                 <FormTextarea placeholder="Descripcion del problema" type="text"/>
                 <div>
-                    <Link to="/servicios/scannerGold/vehiculo"><input type="submit" value ="Siguiente" className="boton_ingresar_enviar color_boton_input"/></Link>
+                    <Link to="/servicios/scannerGold/calendario/reserva"><input type="submit" value ="Reservar" className="boton_ingresar_enviar color_boton_input"/></Link>
                     
                 </div>
 

@@ -37,10 +37,7 @@ function Registrarse(){
                  label="Número Teléfono"
                  type="email"
                  />
-                 <FormImput
-                 label="Dirección"
-                 type="email"
-                 />
+                
                  <FormImput
                  label="Contraseña"
                  type="password"

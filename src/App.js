@@ -15,6 +15,7 @@ import Registrarse from "./pages/Registrarse"
 import Acerca_Nosotros from "./pages/Acerca_nosotros"
 import ReservarHora1 from "./pages/ReservarHora"
 import ReservarHora2 from "./pages/ReservarHora2"
+import Calendario from './components/Calendario';
 
 function App() {
   return (
@@ -56,8 +57,8 @@ function App() {
         <Route exact path="/servicios/scannerSilver">
             <ReservarHora1/>
         </Route>
-        <Route exact path="/servicios/scannerGold/vehiculo">
-            <ReservarHora2/>
+        <Route exact path="/servicios/scannerGold/calendario/reserva">
+            <Calendario/>
         </Route>
         
       </Switch>
