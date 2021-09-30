@@ -1,12 +1,22 @@
-import React from "react"
+import React,{useState} from "react"
 import Navbar from "../components/Navbar"
 import imagen from "../components/4.jpeg"
 import Card from"../components/Card"
 import FormImput from "../components/FormInput"
 import Separacion from "../components/Separacion"
+import {Modal} from "@material-ui/core"
 
 
 function Registrarse(){
+    const [modal, setModal] = useState(false)
+    const body = (
+        <Card title="Felicidades, has sido registrado">
+        <button className="boton_ingresar_enviar color_boton_input" onClick={()=>abrirCerrarModal()}>OK</button>
+        </Card>
+    )
+    const abrirCerrarModal= () => {
+        setModal(!modal)
+    }
     return(
         <>
         <Navbar/>
@@ -20,34 +30,38 @@ function Registrarse(){
                 type="text"
                  />
                  <FormImput
-                 label="Correo Electronico"
+                 label="Correo Electrónico"
                  type="email"
                  />
                  <FormImput
-                 label="numero telefono"
+                 label="Número Teléfono"
                  type="email"
                  />
                  <FormImput
-                 label="direccion"
+                 label="Dirección"
                  type="email"
                  />
                  <FormImput
-                 label="contraseña"
+                 label="Contraseña"
                  type="password"
                  />
                  <FormImput
-                 label="confirmar contraseña"
+                 label="Confirmar contraseña"
                  type="password"
                  />
                  <FormImput
-                 label="codigo del trabajador"
+                 label="Código del trabajador"
                  type="password"
                  />
 
                 
                 <div>
                     
-                    <input type="submit" value ="registrarse" className="boton_ingresar_enviar color_boton_input"/>
+                    <button type="submit" className="boton_ingresar_enviar color_boton_input" onClick={()=>abrirCerrarModal()}>Registrarse</button>
+                    <Modal
+                    open={modal}
+                    onClose={abrirCerrarModal}
+                    >{body}</Modal>
                 </div>
 
             </Card>
