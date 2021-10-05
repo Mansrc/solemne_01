@@ -14,10 +14,11 @@ import CancelarHora from "./pages/CancelarHora"
 import Registrarse from "./pages/Registrarse"
 import Acerca_Nosotros from "./pages/Acerca_nosotros"
 import ReservarHora1 from "./pages/ReservarHora"
-import ReservarHora2 from "./pages/ReservarHora2"
-import Calendario from './components/Calendario';
+
+
 import Calendario from './pages/Calendario';
 import ReservarHora4 from "./pages/ReservarHora4"
+import HomeTrabajador from './pages/HomeTrabajador';
 
 function App() {
   return (
@@ -62,13 +63,15 @@ function App() {
         <Route exact path="/servicios/scannerGold/calendario/reserva">
             <Calendario/>
         </Route>
-        <Route exact path="/servicios/scannerGold/vehiculo/calendario">
-            <Calendario/>
-            </Route>
+        
         
         <Route exact path="/servicios/scannerGold/vehiculo/horas/trabajador">
             <ReservarHora4/>
         </Route>
+        <Route exact path="/acerca_de/ingresar/horario">
+            <HomeTrabajador/>
+        </Route>
+        
       </Switch>
       
     </Router>
