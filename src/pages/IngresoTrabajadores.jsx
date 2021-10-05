@@ -28,7 +28,7 @@ function IngresoTrabajadores(){
                  />
                 <div>
                     
-                    <button type="submit" className="boton_ingresar_enviar color_boton_input">Entrar</button>
+                   <Link to="/acerca_de/ingresar/horario"><button type="submit" className="boton_ingresar_enviar color_boton_input">Entrar</button></Link> 
                 </div>
                 </form>
                 <div>
