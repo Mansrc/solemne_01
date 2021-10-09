@@ -1,8 +1,6 @@
 import React from "react";
 import FormLine from "./FormLine";
 
-
-
 function FormInput(props){
     return (
         <FormLine label ={props.label}>
@@ -10,9 +8,11 @@ function FormInput(props){
                 type = {props.type}
                 placeholder ={props.placeholder}
                 className="inputs"
-                onChange ={props.onChange}
-               value={props.value}
-            />
+                onChange={props.onChange}
+                value={props.value}
+                name={props.name}
+                onWheelCapture={props.onWheelCapture}
+          />
         </FormLine>
     );
 }

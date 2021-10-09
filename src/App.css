@@ -1,5 +1,5 @@
 body{
-  background-color: rgb(212, 211, 211);
+  background-image: linear-gradient(-225deg, #c9c3ca 0%, #6e5561 52%, #d6ced2 100%);
 }
 .navbar{
   top:0;
@@ -49,6 +49,10 @@ nav .logo{
 .logo{
   margin-left: 30px;
   width:120px;
+}
+.logouser{
+  margin-left: 1650px;
+  width:100px;
 }
 nav ul ul {
   position: absolute;
@@ -305,7 +309,7 @@ h6{
   margin:auto;
   margin-top: 150px;
   
-  font-size:22px;
+  font-size:50px;
 }
 
 .react-calendar {
@@ -336,11 +340,7 @@ h6{
   box-sizing: border-box;
 }
 .react-calendar button {
-  margin: 6px;
-  margin-left: 5px;
-  margin-top: 18px;
   border: 0;
-  border-radius: 100px;
   color: black;
   
 }
@@ -356,7 +356,7 @@ h6{
 .react-calendar__navigation button {
   min-width: 44px;
   background: none;
-  height: 30px;
+  height: 100px;
   background-color: black;
   color:white;
   font-size: 20px;
@@ -402,7 +402,7 @@ h6{
 .react-calendar__tile {
   max-width: 100%;
   text-align: center;
-  padding: 0.75em 0.5em;
+  padding: 1.85em 1em;
   background: none;
 }
 .react-calendar__tile:disabled {
@@ -427,7 +427,6 @@ h6{
   background: #a9d4ff;
 }
 .react-calendar__tile--active {
-  background: black;
   color: white;
 }
 .react-calendar__tile--active:enabled:hover,
@@ -438,3 +437,15 @@ h6{
 .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #e6e6e6;
 }
+
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+.alerta-error {
+  color: red;
+} 
