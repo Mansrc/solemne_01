@@ -51,8 +51,8 @@ nav .logo{
   width:120px;
 }
 .logouser{
-  margin-left: 1650px;
   width:100px;
+  float:right
 }
 nav ul ul {
   position: absolute;
