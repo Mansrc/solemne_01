@@ -6,9 +6,19 @@ import FormInput from "../components/FormInput"
 import Separacion from "../components/Separacion"
 import {Modal} from "@material-ui/core"
 import uuid from 'uuid/dist/v4'
+import axios from "axios"
 
 const Registrarse = () => {
+    const url='http://localhost:3000/profile'
     const [modal, setModal] = useState(false)
+    const [mensaje, setMensaje] = useState({
+        general:"Porfavor rellene todos los campos",
+        nombre:'',
+        correo:'Este correo ya se encuentra registrado',
+        telefono:'Porfavor ingrese un telefono de 9 o mas numeros',
+        contraseña:'Porfavor ingrese una contraseña de mas de 4 caracteres',
+        codigo:''
+    })
     const body = (
         <Card title="Felicidades, has sido registrado">
         <button className="boton_ingresar_enviar color_boton_input" onClick={()=>setModal(!modal)}>OK</button>
@@ -22,7 +32,14 @@ const Registrarse = () => {
             contraseña:'',
             codigo:''
     })
-        const [error , actualizarerror] = useState(false)
+        const [error , actualizarerror] = useState({
+            general:false,
+            nombre:false,
+            correo:false,
+            telefono:false,
+            contraseña:false,
+            codigo:false
+           })
         //Funcion que se ejecuta cada que el usuario escribe en un input
        const actualizarState = e =>{
            actualizarRegistro({
@@ -39,31 +56,51 @@ const Registrarse = () => {
             guardarRegistros([
               ...registros,
               registro
-            ])
+            ])  
           }
-       
+          
        //cuando el usuario presiona registrarse
        const submitRegistro = e => {
            e.preventDefault();
            //validar
            if(nombre.trim() === '' || correo.trim() === ''|| telefono.trim() === ''|| contraseña.trim() === '' || codigo.trim() === ''){
-             actualizarerror(true);
+            error.general = true
+            actualizarerror(error)
+             console.log(error.general)
+             console.log(mensaje.general)
              return;
-           }
+           }    
            if(telefono.length < 9 || telefono.length > 12){
-            actualizarerror(true);
+            error.telefono=true
             return;
           }
           if(contraseña.length < 4){
-            actualizarerror(true);
+            error.contraseña=true
             return;
           }
            //asignar un ID
            registro.id= uuid();
-           //Crear la cita
+           //Crear el registro
           crearRegistro(registro)
+          //se  sube el registo
+          axios.post(url, {
+            registros
+       })
+       .then(function (response) {
+        console.log(response);
+       })
+      .catch(function (error) {
+        console.log(error);
+       });
            //Reiniciar el form
-           actualizarerror(false)
+           actualizarerror({
+            general:false,
+            nombre:false,
+            correo:false,
+            telefono:false,
+            contraseña:false,
+            codigo:false
+           })
            actualizarRegistro({
             nombre:'',
             correo:'',
@@ -73,7 +110,8 @@ const Registrarse = () => {
            })
            //ventana emergente
            setModal(!modal)
-       }
+       } 
+        
     return(
         <>
         <Navbar/>
@@ -90,6 +128,7 @@ const Registrarse = () => {
                 value={nombre}
                 name="nombre"
                  />
+                {error.nombre ? <p className='alerta-error'>{mensaje.nombre}</p> : null}
                  <FormInput
                  label="Correo Electrónico"
                  type="email"
@@ -97,6 +136,7 @@ const Registrarse = () => {
                  value={correo}
                  name="correo"
                  />
+                 {error.correo? <p className='alerta-error'>{mensaje.correo}</p> : null}
                  <FormInput
                  label="Número Teléfono"
                  type="number"
@@ -105,7 +145,7 @@ const Registrarse = () => {
                  name="telefono"
                  onWheelCapture={e => { e.target.blur() }}
                  />
-              
+                 {error.telefono ? <p className='alerta-error'>{mensaje.telefono}</p> : null}
                  <FormInput
                  label="Contraseña"
                  type="password"
@@ -113,6 +153,7 @@ const Registrarse = () => {
                  value={contraseña}
                  name="contraseña"
                  />
+                {error.contraseña ? <p className='alerta-error'>{mensaje.contraseña}</p> : null}
                  <FormInput
                  label="Código del trabajador"
                  type="password"
@@ -120,8 +161,8 @@ const Registrarse = () => {
                  value={codigo}
                  name="codigo"
                  />
-
-                {error ? <p className='alerta-error'>hola</p> :null}
+                {error.codigo ? <p className='alerta-error'>{mensaje.codigo}</p> : null}
+                {error.general ? <p className='alerta-error'>{mensaje.general}</p> : null}
                 <div>
                     
                     <button type="submit" className="boton_ingresar_enviar color_boton_input">Registrarse</button>
