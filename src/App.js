@@ -19,6 +19,9 @@ import ReservarHora1 from "./pages/ReservarHora"
 import Calendario from './pages/Calendario';
 import ReservarHora4 from "./pages/ReservarHora4"
 import HomeTrabajador from './pages/HomeTrabajador';
+import RegistroPrueba from './pages/RegistroTrabajador/RegistroPrueba';
+import InicioSesion from './pages/InicioSesion/InicioSesion';
+
 
 function App() {
   return (
@@ -39,7 +42,7 @@ function App() {
           <Acercade_Servicios/>
         </Route>
         <Route exact path="/acerca_de/admin">
-            <IngresoTrabajadores/>
+            <InicioSesion/>
         </Route>
         
         <Route exact path="/acerca_de/cancelar_hora">
@@ -70,6 +73,12 @@ function App() {
         </Route>
         <Route exact path="/acerca_de/ingresar/horario">
             <HomeTrabajador/>
+        </Route>
+        <Route exact path="/registro/prueba">
+            <RegistroPrueba/>
+        </Route>
+        <Route exact path="/login/prueba">
+            <InicioSesion/>
         </Route>
         
       </Switch>

@@ -9,7 +9,7 @@ import uuid from 'uuid/dist/v4'
 import axios from "axios"
 
 const Registrarse = () => {
-    const url='http://localhost:3000/profile'
+    const url='http://localhost:3001/users'
     const [modal, setModal] = useState(false)
     const [mensaje, setMensaje] = useState({
         general:"Porfavor rellene todos los campos",
@@ -84,7 +84,7 @@ const Registrarse = () => {
           crearRegistro(registro)
           //se  sube el registo
           axios.post(url, {
-            registros
+            registro
        })
        .then(function (response) {
         console.log(response);
@@ -110,7 +110,9 @@ const Registrarse = () => {
            })
            //ventana emergente
            setModal(!modal)
+           console.log(registro)
        } 
+
         
     return(
         <>
@@ -127,6 +129,7 @@ const Registrarse = () => {
                 onChange={actualizarState}
                 value={nombre}
                 name="nombre"
+                placeholder="escriba su nombre aqui"
                  />
                 {error.nombre ? <p className='alerta-error'>{mensaje.nombre}</p> : null}
                  <FormInput

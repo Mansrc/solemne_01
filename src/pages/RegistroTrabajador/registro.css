@@ -1,0 +1,53 @@
+.h1-register{
+  margin-top: 110px;
+  text-align: center;
+  color: rgb(255, 166, 0);
+  /* margin-bottom: 0px; */
+}
+.form-register{
+  display:grid;
+ justify-content: center;
+ width: auto;
+}
+.input-register{
+  padding:5px;
+  padding-left: 15px;
+  display:grid;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  width: 500px;
+  height: 25px;
+  border-radius: 20px;
+}
+.label-register{
+  text-align: center;
+  margin: 0px;
+}
+.textarea-register{
+  margin-top: 10px;
+  border-radius:10px ;
+  border-width: 3px;
+  resize: none;
+
+}
+.boton-envio{
+  margin-top: 30px;
+  width: 200px;
+  height: 45px;
+  display:grid;
+  justify-self: center;
+  font-size: 25px;
+  margin-bottom: 70px;
+}
+.error{
+  color:rgb(255, 187, 0);
+  justify-self: center;
+}
+.felicidades-register{
+  justify-self: center;
+  background-color: yellowgreen;
+  color: white;
+  width: 400px;
+  height: 45px;
+
+}
