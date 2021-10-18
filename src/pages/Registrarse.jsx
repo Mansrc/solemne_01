@@ -11,14 +11,14 @@ import axios from "axios"
 const Registrarse = () => {
     const url='http://localhost:3000/profile'
     const [modal, setModal] = useState(false)
-    const mensaje = {
+    const [mensaje, setMensaje] = useState({
         general:"Porfavor rellene todos los campos",
         nombre:'',
         correo:'Este correo ya se encuentra registrado',
         telefono:'Porfavor ingrese un telefono de 9 o mas numeros',
         contraseña:'Porfavor ingrese una contraseña de mas de 4 caracteres',
         codigo:''
-    }
+    })
     const body = (
         <Card title="Felicidades, has sido registrado">
         <button className="boton_ingresar_enviar color_boton_input" onClick={()=>setModal(!modal)}>OK</button>
@@ -64,12 +64,14 @@ const Registrarse = () => {
            e.preventDefault();
            //validar
            if(nombre.trim() === '' || correo.trim() === ''|| telefono.trim() === ''|| contraseña.trim() === '' || codigo.trim() === ''){
-            actualizarerror({general:true})
+            error.general = true
+            actualizarerror(error)
+             console.log(error.general)
+             console.log(mensaje.general)
              return;
            }    
            if(telefono.length < 9 || telefono.length > 12){
-            error.telefono = true
-            actualizarerror(error)
+            error.telefono=true
             return;
           }
           if(contraseña.length < 4){
@@ -80,6 +82,16 @@ const Registrarse = () => {
            registro.id= uuid();
            //Crear el registro
           crearRegistro(registro)
+          //se  sube el registo
+          axios.post(url, {
+            registros
+       })
+       .then(function (response) {
+        console.log(response);
+       })
+      .catch(function (error) {
+        console.log(error);
+       });
            //Reiniciar el form
            actualizarerror({
             general:false,
@@ -99,9 +111,7 @@ const Registrarse = () => {
            //ventana emergente
            setModal(!modal)
        } 
-       axios.post(url, {
-        registros
-       })
+        
     return(
         <>
         <Navbar/>
