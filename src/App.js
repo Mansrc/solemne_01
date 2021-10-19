@@ -11,7 +11,7 @@ import Servicios from "./pages/Servicios"
 import Acercade_Servicios from "./pages/Acercade_Servicios"
 import IngresoTrabajadores from "./pages/IngresoTrabajadores"
 import CancelarHora from "./pages/CancelarHora"
-import Registrarse from "./pages/Registrarse"
+// import Registrarse from "./pages/Registrarse"
 import Acerca_Nosotros from "./pages/Acerca_nosotros"
 import ReservarHora1 from "./pages/ReservarHora"
 
@@ -48,9 +48,9 @@ function App() {
         <Route exact path="/acerca_de/cancelar_hora">
             <CancelarHora />
         </Route>
-        <Route exact path="/acerca_de/registrarse">
+        {/* <Route exact path="/acerca_de/registrarse">
             <Registrarse />
-        </Route>
+        </Route> */}
         <Route exact path="/acerca_de/nosotros">
             <Acerca_Nosotros />
         </Route>
