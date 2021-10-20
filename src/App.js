@@ -21,6 +21,7 @@ import ReservarHora4 from "./pages/ReservarHora4"
 import HomeTrabajador from './pages/HomeTrabajador';
 import RegistroPrueba from './pages/RegistroTrabajador/RegistroPrueba';
 import InicioSesion from './pages/InicioSesion/InicioSesion';
+import ReservaHora from './pages/ReservaHora/ReservaHora';
 
 
 function App() {
@@ -55,13 +56,13 @@ function App() {
             <Acerca_Nosotros />
         </Route>
         <Route exact path="/servicios/scannerGold">
-            <ReservarHora1/>
+            <ReservaHora/>
         </Route>
         <Route exact path="/servicios/scannerplatinium">
-            <ReservarHora1/>
+            <ReservaHora/>
         </Route>
         <Route exact path="/servicios/scannerSilver">
-            <ReservarHora1/>
+            <ReservaHora/>
         </Route>
         <Route exact path="/servicios/scannerGold/calendario/reserva">
             <Calendario/>
@@ -80,6 +81,10 @@ function App() {
         <Route exact path="/login/prueba">
             <InicioSesion/>
         </Route>
+        <Route exact path="/reserva/prueba">
+            <ReservaHora/>
+        </Route>
+        
         
       </Switch>
       

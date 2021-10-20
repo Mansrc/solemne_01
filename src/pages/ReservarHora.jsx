@@ -58,7 +58,7 @@ function ReservarHora(){
         <section id="contenedor_contacto">
             
             <img src={imagen} id="imagen_contacto" />
-            <Card title="Datos de Usuario" id="carta_redondear">
+            <Card title="Datos de Usuario">
                 <FormImput
                 placeholder="Correo Electronico"
                 type="mail"
