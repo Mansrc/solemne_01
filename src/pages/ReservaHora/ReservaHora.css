@@ -31,3 +31,9 @@
   font-size: 120%;
   background-color: chartreuse;
 }
+.p-error{
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color:ivory;
+}

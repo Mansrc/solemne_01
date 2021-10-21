@@ -11,13 +11,16 @@ const UseForm = (initialForm,validateForm) => {
       [e.target.name]:e.target.value
     }
     )
+    
   }; 
   const handleBlur =(e)=>{
     handleChange(e)
     setErrors(validateForm(form))
+    
   };
   const handleSubmit = (e)=>{
     e.preventDefault()
+    
     console.log(form)
     // if(Object.keys(errors).length===0){
     //   console.log("no hay errores")
