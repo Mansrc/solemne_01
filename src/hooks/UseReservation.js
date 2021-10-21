@@ -22,10 +22,25 @@ const UseForm = (initialForm,validateForm) => {
     e.preventDefault()
     
     console.log(form)
-    // if(Object.keys(errors).length===0){
-    //   console.log("no hay errores")
+    if(Object.keys(errors).length===0){
+      axios.get('http://localhost:5000/reserva')
+      .then(promises=>{
+        let user = promises
+        console.log(user.name)
+        user.map(e=>{
+          if(e.fecha === form.fecha && e.hora === form.hora){
+            console.log("coneccion encontrada")
+           
+          }else{
+            console.log("conexion no encontrada")
+          }
+        })
+      })
+      .catch(error=>{
+        console.log(error)
+      })
       
-    // }
+    }
 }
 
   return {

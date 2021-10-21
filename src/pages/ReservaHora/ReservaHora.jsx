@@ -121,7 +121,7 @@ const validationsForm = (form) =>{
   if (!form.direccion.trim()){
     errors.direccion="El campo direccion es requerido"
   }
-  if (form.comuna ==="comuna" || !form.comuna.trim()){
+  if (form.comuna ==="comunas" || !form.comuna.trim()){
     errors.comuna="El campo comuna es requerido"
   }
   if (form.marca==="marca" || !form.marca.trim()){
