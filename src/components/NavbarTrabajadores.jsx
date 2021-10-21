@@ -10,7 +10,7 @@ function NavbarTrabajadores(){
     return(
         <nav className="navbar">
         <div class ="logo"><img class ="logo" src={logo}/></div>
-        <input type="image" class ="logouser" src={user} />
+       <input type="image" class ="logouser" src={user} />
         </nav>
         
     );

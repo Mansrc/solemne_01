@@ -21,6 +21,9 @@ function IngresoTrabajadores(){
            ...ingreso,
            [e.target.name]:e.target.value
        })
+       if(ingreso.correo.length<5){
+           console.log("error")
+       }
    }
 
    // Extrar los valores
@@ -49,7 +52,7 @@ function IngresoTrabajadores(){
                 <FormInput
                 label="Correo"
                 type="email"
-                onChange={actualizarState}
+                onChange ={actualizarState}
                 value={correo}
                 name="correo"
                  />

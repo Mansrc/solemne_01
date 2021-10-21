@@ -51,8 +51,8 @@ nav .logo{
   width:120px;
 }
 .logouser{
-  margin-left: 1200px;
   width:100px;
+  float:right
 }
 nav ul ul {
   position: absolute;
@@ -447,6 +447,7 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 .alerta-error {
+  margin:0;
   color: red;
 } 
 /*--------------cuerpo de confirmacion---------------------*/

@@ -11,7 +11,7 @@ import Servicios from "./pages/Servicios"
 import Acercade_Servicios from "./pages/Acercade_Servicios"
 import IngresoTrabajadores from "./pages/IngresoTrabajadores"
 import CancelarHora from "./pages/CancelarHora"
-import Registrarse from "./pages/Registrarse"
+// import Registrarse from "./pages/Registrarse"
 import Acerca_Nosotros from "./pages/Acerca_nosotros"
 import ReservarHora1 from "./pages/ReservarHora"
 import Verificacion from './pages/Verificacion';
@@ -20,6 +20,10 @@ import Calendario from './pages/Calendario';
 import ReservarHora4 from "./pages/ReservarHora4"
 import HomeTrabajador from './pages/HomeTrabajador';
 import InicioBoss from './pages/InicioBoss';
+import RegistroPrueba from './pages/RegistroTrabajador/RegistroPrueba';
+import InicioSesion from './pages/InicioSesion/InicioSesion';
+import ReservaHora from './pages/ReservaHora/ReservaHora';
+
 
 function App() {
   return (
@@ -40,26 +44,26 @@ function App() {
           <Acercade_Servicios/>
         </Route>
         <Route exact path="/acerca_de/admin">
-            <IngresoTrabajadores/>
+            <InicioSesion/>
         </Route>
         
         <Route exact path="/acerca_de/cancelar_hora">
             <CancelarHora />
         </Route>
-        <Route exact path="/acerca_de/registrarse">
+        {/* <Route exact path="/acerca_de/registrarse">
             <Registrarse />
-        </Route>
+        </Route> */}
         <Route exact path="/acerca_de/nosotros">
             <Acerca_Nosotros />
         </Route>
         <Route exact path="/servicios/scannerGold">
-            <ReservarHora1/>
+            <ReservaHora/>
         </Route>
         <Route exact path="/servicios/scannerplatinium">
-            <ReservarHora1/>
+            <ReservaHora/>
         </Route>
         <Route exact path="/servicios/scannerSilver">
-            <ReservarHora1/>
+            <ReservaHora/>
         </Route>
         <Route exact path="/servicios/scannerGold/calendario/reserva">
             <Calendario/>
@@ -78,6 +82,16 @@ function App() {
         <Route exact path="/acerca_de/ingresar/jefe">
             <InicioBoss/>
         </Route>
+        <Route exact path="/registro/prueba">
+            <RegistroPrueba/>
+        </Route>
+        <Route exact path="/login/prueba">
+            <InicioSesion/>
+        </Route>
+        <Route exact path="/reserva/prueba">
+            <ReservaHora/>
+        </Route>
+        
         
       </Switch>
       

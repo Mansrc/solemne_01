@@ -1,0 +1,33 @@
+.form-reserva{
+  display: grid;
+  justify-content: center;
+  width: auto;
+}
+.input-reserva{
+  padding-left: 15px;
+  margin-bottom: 5px;
+  width: 500px;
+  height: 35px;
+  border-radius: 10px;
+}
+.select-reserva{
+  padding-left: 15px;
+  margin-bottom: 5px;
+  width: 520px;
+  height: 35px;
+  border-radius: 10px;
+}
+#t-a-reserva{
+  padding-left: 15px;
+  border-radius: 10px;
+}
+#boton-reserva{
+  width: 150px;
+  height: 45px;
+  justify-self: center;
+  margin-bottom: 45px;
+  margin-top: 20px;
+  border-radius: 15px;
+  font-size: 120%;
+  background-color: chartreuse;
+}
