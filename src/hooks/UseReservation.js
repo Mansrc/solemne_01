@@ -5,6 +5,7 @@ const UseForm = (initialForm,validateForm) => {
   const [errors, setErrors] = useState({})
   const [loading, setLoading] = useState(false)
   const [response, setResponse] = useState(false)
+  const [errorhora, seterrorhora] = useState(false)
   const handleChange =(e)=>{
     setForm(
       {...form,
@@ -18,6 +19,7 @@ const UseForm = (initialForm,validateForm) => {
     setErrors(validateForm(form))
     
   };
+
   const handleSubmit = (e)=>{
     e.preventDefault()
     
@@ -25,20 +27,39 @@ const UseForm = (initialForm,validateForm) => {
     if(Object.keys(errors).length===0){
       axios.get('http://localhost:5000/reserva')
       .then(promises=>{
-        let user = promises
-        console.log(user.name)
+        let user = promises.data
+        console.log(promises)
         user.map(e=>{
           if(e.fecha === form.fecha && e.hora === form.hora){
-            console.log("coneccion encontrada")
+            
+            return seterrorhora(true)
            
           }else{
-            console.log("conexion no encontrada")
+            seterrorhora(false)
           }
         })
       })
       .catch(error=>{
         console.log(error)
       })
+      if(errorhora === false){
+        
+        axios({
+          method:"post",
+          url:"http://localhost:5000/reserva",
+          data:form
+        })
+        .then((respons)=>{
+          
+            console.log(respons.data.id)
+            setForm(initialForm)
+       
+        })
+        .catch((error)=>{
+          alert(error)
+        })
+        return
+      }
       
     }
 }
@@ -48,6 +69,7 @@ const UseForm = (initialForm,validateForm) => {
     errors,
     loading,
     response,
+    errorhora,
     handleChange,
     handleBlur,
    handleSubmit

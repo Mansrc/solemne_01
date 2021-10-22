@@ -75,15 +75,15 @@ const horas=[
 const initialForm = {
   email:"",
   name:"",
-  comuna:"",
+  comuna:"comunas",
   direccion:"",
   phone:"",
-  marca:"",
-  año:"",
+  marca:"marca",
+  año:"año",
   modelo:"",
   problema:"",
   fecha:"",
-  hora:"",
+  hora:"hora",
 }
 const validationsForm = (form) =>{
   let errors = {}
@@ -146,7 +146,7 @@ const validationsForm = (form) =>{
   if (!form.hora.trim()){
     errors.hora="El campo hora es requerido"
   }else{
-    if(formHora<horaactual){
+    if(formHora<horaactual && fechaFinal===fechainicial){
       errors.hora=`hora no valida, la hora debe ser superior a ${hora}`
     }
   }
@@ -162,6 +162,7 @@ const ReservaHora = () => {
     errors,
     loading,
     response,
+    errorhora,
     handleChange,
     handleBlur,
     handleSubmit
@@ -289,6 +290,7 @@ const ReservaHora = () => {
             <option value={e.value}>{e.label}</option>
           ))}
         </select>
+        {errorhora?<p className="p-error">Esta hora ya esta asignada, por facor tome otra </p>:null}
         <input id="boton-reserva" type="submit" value="Reservar"/>
       </form>
     </>

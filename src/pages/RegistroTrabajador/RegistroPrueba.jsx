@@ -144,7 +144,7 @@ const RegistroPrueba = () => {
         placeholder="codigo de trabajador"
       />
       {errors.code?<p className="error">{errors.code}</p>:null}
-      {response?<p className="felicidades-register">Felicidades, tu cuenta ha sido creada</p>:null}
+      {response?<p id="felicidades-register">Felicidades, tu cuenta ha sido creada</p>:null}
       <input
       className="boton-envio input-register"
       type="submit"
