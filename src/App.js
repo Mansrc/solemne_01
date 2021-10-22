@@ -14,11 +14,12 @@ import CancelarHora from "./pages/CancelarHora"
 // import Registrarse from "./pages/Registrarse"
 import Acerca_Nosotros from "./pages/Acerca_nosotros"
 import ReservarHora1 from "./pages/ReservarHora"
-
+import Verificacion from './pages/Verificacion';
 
 import Calendario from './pages/Calendario';
 import ReservarHora4 from "./pages/ReservarHora4"
 import HomeTrabajador from './pages/HomeTrabajador';
+import InicioBoss from './pages/InicioBoss';
 import RegistroPrueba from './pages/RegistroTrabajador/RegistroPrueba';
 import InicioSesion from './pages/InicioSesion/InicioSesion';
 import ReservaHora from './pages/ReservaHora/ReservaHora';
@@ -75,6 +76,12 @@ function App() {
         </Route>
         <Route exact path="/acerca_de/ingresar/horario">
             <HomeTrabajador/>
+        </Route>
+        <Route exact path="/acerca_de/ingresar/horario/confirmacion">
+            <Verificacion/>
+        </Route>
+        <Route exact path="/acerca_de/ingresar/jefe">
+            <InicioBoss/>
         </Route>
         <Route exact path="/registro/prueba">
             <RegistroPrueba/>

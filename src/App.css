@@ -450,3 +450,60 @@ input[type="number"] {
   margin:0;
   color: red;
 } 
+/*--------------cuerpo de confirmacion---------------------*/
+table{
+
+ margin-top: 200px;
+ margin-left: auto;
+ margin-right: auto;
+
+}
+
+td{
+  background-color: white;
+}
+th{
+  background-color: black;
+  color: white;
+}
+
+button#realizado{
+  background-color: green;
+  color: black;
+
+}
+button#norealizado{
+  background-color: red;
+  color: black;
+ 
+}
+
+.table-verificacion{
+  display: grid;
+}
+  
+
+
+
+/*--------------cuerpo de InicioBoss---------------------*/
+
+.BotonBoss{
+ 
+  margin-top: 20px;
+  width: 180px;
+  height: 50px; 
+  background-color: black;
+  color: white;
+  font-size: small;
+  border-radius: 10px;
+  margin-left: 650px;
+
+  text-align: center; 
+  font-family: Arial, Helvetica, sans-serif;
+ 
+}
+
+Div#serviciosdiarios{
+  margin-top: 110px;
+  margin-left: 100px;
+}
