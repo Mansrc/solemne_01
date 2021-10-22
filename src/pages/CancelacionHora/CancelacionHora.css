@@ -1,0 +1,31 @@
+.form-cancelar{
+  margin-top: 150px;
+  display: grid;
+  justify-content: center;
+}
+.titulo-cancelar{
+  font-size: 250%;
+  text-align: center;
+}
+.input-cancelar{
+  margin-bottom: 20px;
+  width: 580px;
+  height: 45px;
+  border-radius: 15px;
+  padding-left: 25px;
+}
+#text-area-cancel{
+  padding-top: 10px;
+  padding-left: 25px;
+  border-radius: 15px;
+}
+#boton-cancelar{
+  text-align: center;
+  margin-top: 45px;
+  margin-bottom: 73px;
+  width: 180px;
+  font-size: 120%;
+  justify-self: center;
+  background-color: chartreuse;
+  padding-left: 0px;
+}

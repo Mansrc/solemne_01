@@ -23,6 +23,7 @@ import InicioBoss from './pages/InicioBoss';
 import RegistroPrueba from './pages/RegistroTrabajador/RegistroPrueba';
 import InicioSesion from './pages/InicioSesion/InicioSesion';
 import ReservaHora from './pages/ReservaHora/ReservaHora';
+import CancelacionHora from './pages/CancelacionHora/CancelacionHora';
 
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
         </Route>
         
         <Route exact path="/acerca_de/cancelar_hora">
-            <CancelarHora />
+            <CancelacionHora />
         </Route>
         {/* <Route exact path="/acerca_de/registrarse">
             <Registrarse />
