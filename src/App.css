@@ -461,26 +461,76 @@ table{
 
 td{
   background-color: white;
+
 }
 th{
   background-color: black;
   color: white;
+  width: 100px;
+  height: 75px;
 }
 
 button#realizado{
   background-color: green;
-  color: black;
+  color: white;
 
 }
 button#norealizado{
   background-color: red;
-  color: black;
+  color: white;
  
 }
 
 .table-verificacion{
   display: grid;
 }
+table td:nth-child(1){
+  width: 100px;
+  text-align: center;
+
+}
+table td:nth-child(2){
+  width: 100px;
+  text-align: center;
+
+}
+table td:nth-child(3){
+  width: 100px;
+  text-align: center;
+
+}
+table td:nth-child(4){
+  width: 120px;
+  text-align: center;
+
+}
+
+table td:nth-child(5){
+  width: 250px;
+  text-align: center;
+
+}
+
+table th:nth-child(4){
+  width: 120px;
+}
+
+table th:nth-child(5){
+  width: 250px;
+}
+#fechacss{
+  width: 94,33%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+}
+
+
+
+
   
 
 

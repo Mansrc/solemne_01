@@ -4,7 +4,7 @@ import axios from "axios"
 
 const Confirmacion = ()=>{
  const [data, setData] = useState([])
-   useEffect(() => {const url="http://192.168.1.86:3000/datos"
+   useEffect(() => {const url="http://localhost:3000/datos"
    axios.get(url,{})
   .then(Request=>{
       let datos=Request.data

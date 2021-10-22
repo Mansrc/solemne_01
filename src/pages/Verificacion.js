@@ -15,6 +15,7 @@ return(
 <div className="table-verificacion">
 
 <table className="table-verificacion">
+    <div id="fechacss">2021-02-21</div>
 <thead>
 
 
@@ -24,6 +25,7 @@ return(
     <th>Hora</th><th>Realizado</th><th>No Realizado</th><th>Contacto</th><th>Dirección</th>
 </tr>
 </thead>
+
 <Confirmacion/>
 
 </table>
