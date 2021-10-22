@@ -1,24 +1,27 @@
-import React, { useEffect } from "react"
+import React, { useEffect,useState} from "react"
 import axios from "axios"
 
 
 const Confirmacion = ()=>{
- 
-   useEffect(() => {const url="http://localhost:5000/datos"
+ const [data, setData] = useState([])
+ console.log(data)
+ console.log(data.hora)
+   useEffect(() => {const url="http://192.168.1.86:3000/datos"
    axios.get(url,{})
   .then(Request=>{
       let datos=Request.data
-      datos.map(e=>{
-          console.log(e.direccion)
-      })
-      
+      setData(datos) 
   })
   .catch(error=>{
       console.log(error)
   })}, [])
+  
     return(
-    <tr>
-    <td>08:00AM</td><td><button id="realizado">Realizado</button></td><td><button id="norealizado">X</button></td><td>+569</td><td>Calle falsa 123</td>
+    <tr>{data.length > 0 ? (
+        data.map(e=>{return(
+        <tr>
+    <td>{e.hora}</td><td><button id="realizado">Realizado</button></td><td><button id="norealizado">X</button></td><td>{e.phone}</td><td>{e.direccion}</td>
+    </tr>)})): (<tr>No hay horas guardadas</tr>)}
 </tr>
     )
 }
