@@ -22,7 +22,7 @@ const Confirmacion = ()=>{
         datosordenados.map(e=>{return(
         <tr>
     <td>{e.hora}</td><td><button id="realizado">Realizado</button></td><td><button id="norealizado">X</button></td><td>{e.phone}</td><td>{e.direccion}</td>
-    </tr>)})): (<tr>No hay horas guardadas</tr>)}
+    </tr>)})): (<tr id="mensajecss">No hay horas guardadas</tr>)}
 </tr>
     )
 }

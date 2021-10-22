@@ -42,5 +42,16 @@
           "modelo": "i 10",
           "name": "Alejandro",
           "phone": "787",
-          "id": 3}
-]}
+          "id": 3},
+          { "año": "2003",
+            "comuna": "lo barnechea",
+            "direccion": "memolandia 123",
+            "email": "kano.verapaz@hotmail.com",
+            "fecha": "2021-10-21",
+            "hora": "12:30",
+            "marca": "Ford",
+            "modelo": "i 10",
+            "name": "Alejandro",
+            "phone": "787",
+            "id": 2}
+            ]}
