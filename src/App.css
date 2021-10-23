@@ -469,10 +469,20 @@ button#realizado{
   color: white;
 
 }
+button#realizado:hover{
+  background-color: rgb(149, 223, 149);
+  color: white;
+
+}
 button#norealizado{
   background-color: red;
   color: white;
  
+}
+button#norealizado:hover{
+  background-color: rgb(223, 147, 149);
+  color: white;
+
 }
 
 .table-verificacion{
