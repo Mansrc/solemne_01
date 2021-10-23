@@ -17,7 +17,6 @@ import InicioSesion from './pages/InicioSesion/InicioSesion';
 import ReservaHora from './pages/ReservaHora/ReservaHora';
 import CancelacionHora from './pages/CancelacionHora/CancelacionHora';
 
-
 function App() {
   return (
       <BrowserRouter>
@@ -25,18 +24,18 @@ function App() {
         <Route exact path="/" component={Inicio}/>
         <Route exact path="/contactar" component={Contactar}/>
         <Route exact path="/servicios" component={Servicios}/>
-        <Route exact path="/acerca_de/servicios" component={Acercade_Servicios}/>
-        <Route exact path="/acerca_de/admin" component={InicioSesion}/>   
-        <Route exact path="/acerca_de/cancelar_hora" component={CancelacionHora}/>
-        <Route exact path="/acerca_de/nosotros" component={Acerca_Nosotros}/>
-        <Route exact path="/servicios/scannerGold" component={ReservaHora}/>
-        <Route exact path="/servicios/scannerplatinium" component={ReservaHora}/>
-        <Route exact path="/servicios/scannerSilver" component={ReservaHora}/>
-        <Route exact path="/acerca_de/ingresar/horario" component={HomeTrabajador}/>
-        <Route exact path="/acerca_de/ingresar/horario/confirmacion" component={Verificacion}/>
-        <Route exact path="/acerca_de/ingresar/jefe" component={InicioBoss}/>
-        <Route exact path="/registro/prueba" component={RegistroPrueba}/>
         <Route exact path="/reserva/prueba" component={ReservaHora}/>
+        <Route exact path="/acerca_de/admin" component={InicioSesion}/> 
+        <Route exact path="/registro/prueba" component={RegistroPrueba}/>
+        <Route exact path="/servicios/scannerGold" component={ReservaHora}/>
+        <Route exact path="/acerca_de/nosotros" component={Acerca_Nosotros}/>
+        <Route exact path="/acerca_de/ingresar/jefe" component={InicioBoss}/>
+        <Route exact path="/servicios/scannerSilver" component={ReservaHora}/> 
+        <Route exact path="/servicios/scannerplatinium" component={ReservaHora}/>
+        <Route exact path="/acerca_de/servicios" component={Acercade_Servicios}/>  
+        <Route exact path="/acerca_de/cancelar_hora" component={CancelacionHora}/>
+        <Route exact path="/acerca_de/ingresar/horario" component={HomeTrabajador}/>
+        <Route exact path="/acerca_de/ingresar/horario/confirmacion" component={Verificacion}/>     
       </Switch>  
     </BrowserRouter>
   );
