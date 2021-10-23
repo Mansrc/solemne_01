@@ -25,7 +25,7 @@ const UseForm = (initialForm,validateForm) => {
     
     console.log(form)
     if(Object.keys(errors).length===0){
-      axios.get('http://localhost:5000/reserva')
+      axios.get('http://192.168.1.86:3000/datos')
       .then(promises=>{
         let user = promises.data
         console.log(promises)
@@ -46,7 +46,7 @@ const UseForm = (initialForm,validateForm) => {
         
         axios({
           method:"post",
-          url:"http://localhost:5000/reserva",
+          url:"http://192.168.1.86:3000/datos",
           data:form
         })
         .then((respons)=>{

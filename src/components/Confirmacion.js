@@ -2,10 +2,11 @@ import React, { useEffect,useState} from "react"
 import axios from "axios"
 
 
-const Confirmacion = ()=>{
- let fecha = '2021-10-21'
+const Confirmacion = (props)=>{
+ let fecha = props.fecha
+ console.log(props.fecha)
  const [data, setData] = useState([])
-   useEffect(() => {const url="http://localhost:3000/datos"
+   useEffect(() => {const url="http://192.168.1.86:3000/datos"
    axios.get(url,{})
   .then(Request=>{
       let datos=Request.data
@@ -16,7 +17,6 @@ const Confirmacion = ()=>{
   })}, [])
   let datosfiltrados = data.filter(e=>e.fecha === fecha)
   let datosordenados = datosfiltrados.sort((a, b) => (a.hora > b.hora ? 1 : a.hora < b.hora ? -1 : 0))
-  console.log(datosordenados)
     return(
     <tr>{datosordenados.length > 0 ? (    
         datosordenados.map(e=>{return(

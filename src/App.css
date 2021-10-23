@@ -297,12 +297,6 @@ h6{
   color:white
 }
 
-.react-calendar{
-  height: 500px;
-  max-width: 100%;
-  width:600px;
-  
-}
 .calendario{
   text-align: center;
   justify-content: center;
@@ -561,4 +555,7 @@ table th:nth-child(5){
 Div#serviciosdiarios{
   margin-top: 110px;
   margin-left: 100px;
+}
+.guardar{
+  margin-left: 850px;
 }
