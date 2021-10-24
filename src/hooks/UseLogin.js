@@ -25,7 +25,7 @@ const UseForm = (initialForm,validateForm) => {
     e.preventDefault()
     console.log(form)
     if(Object.keys(errors).length===0){
-       axios.get('http://localhost:5000/users')
+       axios.get('http://127.0.0.1:8000/users')
       .then(promises=>{
         let user = promises.data
         user.map(e=>{

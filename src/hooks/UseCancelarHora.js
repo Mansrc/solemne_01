@@ -22,7 +22,7 @@ const UseForm = (initialForm,validateForm) => {
     if(Object.keys(errors).length===0){
       axios({
         method:"delete",
-        url:`http://localhost:5000/reserva/${form.code}`,
+        url:`http://127.0.0.1:8000/reserva/${form.code}`,
         data:form
       })
       .then((respons)=>{
@@ -36,7 +36,7 @@ const UseForm = (initialForm,validateForm) => {
       })
       axios({
         method:"post",
-        url:"http://localhost:5000/cancelacion",
+        url:"http://127.0.0.1:8000/cancelacion",
         data:form
       })
       .then((respons)=>{

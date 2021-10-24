@@ -150,7 +150,7 @@ const validationsForm = (form) =>{
       errors.hora=`hora no valida, la hora debe ser superior a ${hora}`
     }
   }
-  axios.get('http://localhost:5000/reserva')
+  axios.get('http://127.0.0.1:8000/reserva')
   .then(promises=>{
     let user = promises.data
     user.map(e=>{

@@ -23,7 +23,7 @@ const UseForm = (initialForm,validateForm) => {
       console.log("no hay errores")
       axios({
         method:"post",
-        url:"http://localhost:5000/users",
+        url:"http://127.0.0.1:8000/users",
         data:form
       })
       .then((respons)=>{
