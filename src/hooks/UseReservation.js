@@ -25,24 +25,7 @@ const UseForm = (initialForm,validateForm) => {
     
     console.log(form)
     if(Object.keys(errors).length===0){
-      axios.get('http://localhost:5000/reserva')
-      .then(promises=>{
-        let user = promises.data
-        console.log(promises)
-        user.map(e=>{
-          if(e.fecha === form.fecha && e.hora === form.hora){
-            
-            return seterrorhora(true)
-           
-          }else{
-            seterrorhora(false)
-          }
-        })
-      })
-      .catch(error=>{
-        console.log(error)
-      })
-      if(errorhora === false){
+    
         
         axios({
           method:"post",
@@ -51,7 +34,7 @@ const UseForm = (initialForm,validateForm) => {
         })
         .then((respons)=>{
           
-            console.log(respons.data.id)
+            alert("su hora ha sido reservada")
             setForm(initialForm)
        
         })
@@ -59,7 +42,7 @@ const UseForm = (initialForm,validateForm) => {
           alert(error)
         })
         return
-      }
+      
       
     }
 }

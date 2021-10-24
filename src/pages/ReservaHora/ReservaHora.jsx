@@ -150,7 +150,18 @@ const validationsForm = (form) =>{
       errors.hora=`hora no valida, la hora debe ser superior a ${hora}`
     }
   }
-
+  axios.get('http://localhost:5000/reserva')
+  .then(promises=>{
+    let user = promises.data
+    user.map(e=>{
+      if(e.fecha === form.fecha && e.hora === form.hora){   
+        errors.existe=alert("esta hora no esta disponible")
+      }
+    })
+  })
+  .catch(error=>{
+    console.log(error)
+  })
 
 
   return errors
@@ -290,7 +301,9 @@ const ReservaHora = () => {
             <option value={e.value}>{e.label}</option>
           ))}
         </select>
-        {errorhora?<p className="p-error">Esta hora ya esta asignada, por facor tome otra </p>:null}
+
+        {errors.existe?<p className="p-error">{errors.existe}</p>:null}
+        
         <input id="boton-reserva" type="submit" value="Reservar"/>
       </form>
     </>

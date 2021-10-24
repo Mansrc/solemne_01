@@ -19,10 +19,39 @@ const UseForm = (initialForm,validateForm) => {
   const handleSubmit = (e)=>{
     e.preventDefault()
     console.log(form)
-    // if(Object.keys(errors).length===0){
-    //   console.log("no hay errores")
+    if(Object.keys(errors).length===0){
+      axios({
+        method:"delete",
+        url:`http://localhost:5000/reserva/${form.code}`,
+        data:form
+      })
+      .then((respons)=>{
+        
+          alert("su hora ha sido borrada")
+          setForm(initialForm)
+     
+      })
+      .catch((error)=>{
+        alert(error)
+      })
+      axios({
+        method:"post",
+        url:"http://localhost:5000/cancelacion",
+        data:form
+      })
+      .then((respons)=>{
+        
+          console.log(respons.data.id)
+          
+     
+      })
+      .catch((error)=>{
+        alert(error)
+      })
+      return
       
-    // }
+      
+    }
 }
 
   return {
