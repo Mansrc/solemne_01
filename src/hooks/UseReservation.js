@@ -24,12 +24,11 @@ const UseForm = (initialForm,validateForm) => {
     e.preventDefault()
     
     console.log(form)
-    if(Object.keys(errors).length===0){
-    
-        
+    if(Object.keys(errors).length===0){  
         axios({
           method:"post",
           url:"http://127.0.0.1:8000/reserva",
+
           data:form
         })
         .then((respons)=>{
