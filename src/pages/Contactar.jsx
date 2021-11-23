@@ -6,13 +6,15 @@ import Card from "../components/Card";
 import FormImput from "../components/FormInput"
 import FormTextarea from "../components/FormTextarea"
 import Axios from "axios";
+import emailjs from 'emailjs-com'
 function Contactar(){
-    const [contacto, setContacto] = useState({
+    let inicialContacto ={
         name:'',
         email:'',
         phone:'',
         mensaje:'',
-     })
+     }
+    const [contacto, setContacto] = useState(inicialContacto)
     const handleChange =(e)=>{
         setContacto({
             ...contacto,
@@ -23,6 +25,7 @@ function Contactar(){
     const handleSubmit = (e)=>{
         e.preventDefault()
         if(contacto.name != ""&&contacto.email!=''&&contacto.phone!=''&&contacto.mensaje!=''){
+
             Axios({
                 data:contacto,
                 method:'post',
@@ -30,11 +33,22 @@ function Contactar(){
               })
             .then((response) => {
                   console.log(response.data)
-                  
+                  setContacto(inicialContacto)
              })
              .catch((error) => {
                   console.log(error);
              });
+             emailjs.sendForm('service_wxxfp5c', 'template_v44j942', e.target,'user_n9jx7Z8r32xQLMk6YhXLc')
+             
+             .then((result) => {
+                 console.log(result);
+                 alert(`Felicidades ${contacto.name}, pronto la empresa se contactara contigo`)
+                 setContacto(inicialContacto)
+             }, (error) => {
+                 console.log(error);
+                 console.log('error al enviar email')
+             });
+             
         }
     }
 
@@ -81,8 +95,7 @@ function Contactar(){
                     className="textArea"
                 ></textarea>
                 <div>
-                    
-                    <input type="submit" value ="enviar" className="boton_ingresar_enviar"/>
+                    <button type="submit" className="boton_ingresar_enviar">enviar</button>
                 </div>
 
             </Card>
