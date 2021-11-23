@@ -72,6 +72,7 @@ const horas=[
   {value:"19:30" ,label:"19:30"},
   {value:"20:00", label:"20:00"}
 ]
+let hora1=[]
 const initialForm = {
   email:"",
   name:"",
@@ -154,10 +155,10 @@ const validationsForm = (form) =>{
   .then(promises=>{
     let user = promises.data
     user.map(e=>{
-      if(e.fecha === form.fecha && e.hora === form.hora){   
-        errors.existe=alert("esta hora no esta disponible")
+      if(e.fecha === form.fecha){
+        hora1.push({value:e.hora,label:e.hora})
       }
-    })
+   })
   })
   .catch(error=>{
     console.log(error)
@@ -298,7 +299,7 @@ const ReservaHora = () => {
         <select className="select-reserva" name="hora" onBlur={handleBlur} onChange={handleChange}>
           <option disabled selected>hora</option> 
           {horas.map((e)=>(
-            <option value={e.value}>{e.label}</option>
+            <option value={e.value} disabled={hora1.find(i=> e.value === i.value) ? true : false}>{e.label}</option>
           ))}
         </select>
 
