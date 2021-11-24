@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import Navbar from '../../components/Navbar';
 import style from './registro.css'
 import Separacion from '../../components/Separacion';
@@ -12,7 +12,10 @@ const initialForm = {
   passwordconfirm:"",
   code:""
 }
-const validationsForm = (form)=>{
+
+
+
+const validationsForm = (form,codigoError)=>{
   let errors = {}
   let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
   let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
@@ -55,6 +58,10 @@ const validationsForm = (form)=>{
   }
   if(!form.code.trim()){
     errors.code="El campo codigo de trabajador es requerido"
+  }else{
+    if(codigoError){
+      errors.code="codigo no encontrado en la base de datos"
+    }
   }
   return errors
 }
@@ -65,11 +72,11 @@ const RegistroPrueba = () => {
     errors,
     loading,
     response,
+    codigoError,
     handleChange,
     handleBlur,
     handleSubmit
     } = UseForm(initialForm,validationsForm)
-    
   return ( 
     <>
     <Navbar/>
